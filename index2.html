@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>listas</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id = "app">
+        <h1>cadastro</h1>
+      <h4>Nome:</h4> <input type="text" v-model="nome">
+        <br>
+     <h4>Profissao:</h4>  <input type="text" v-model="profissao">
+        <br>
+        <button v-on:click="pessoas">Enviar</button>
+
+    <br>
+
+<ul>
+    <li v-for="pes in pessoas">
+        {{ pes.nome }} - {{ pes.profissao}}
+    </li>
+</ul>
+</div>
+
+<script>
+     var app = new Vue({
+         el:"#app",
+         data: {
+             pessoas: [
+              { 
+                  nome: "William",
+                 profissao: "professor"
+            } , {
+                nome: "joao",
+                 profissao: "professor"
+            } ,{
+                nome: "jair",
+                 profissao: "professor"
+            }
+             ]
+         }
+
+     })
+</script>
+    
+</body>
+</html>
